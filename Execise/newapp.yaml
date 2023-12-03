@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp101
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webapp101
+  template:
+    metadata:
+      labels:
+        app: webapp101
+    spec:
+      containers:
+      - name: webapp101
+        image: jassyboy/roadmapdevops:V1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp
+spec:
+  type: NodePort
+  selector:
+    app: webapp101
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30112
+
