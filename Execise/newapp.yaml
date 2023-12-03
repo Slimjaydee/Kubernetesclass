@@ -34,11 +34,13 @@ metadata:
   name: myappsvc
   namespace: dev
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: webapp101
   ports:
   - port: 80
     targetPort: 80
+    nodePort: 30112
+
 
 
