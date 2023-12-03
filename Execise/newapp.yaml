@@ -19,11 +19,11 @@ spec:
       labels:      
         app: webapp101
       annotations:
-        kubernetes.io/change-cause: "This is the version 2 of the application"
+        kubernetes.io/change-cause: "This is the version 3 of the application"
     spec:
       containers:
       - name: webapp101
-        image: jassyboy/roadmapdevops:V2
+        image: jassyboy/roadmapdevops:V3
         ports:
         - containerPort: 80
 
