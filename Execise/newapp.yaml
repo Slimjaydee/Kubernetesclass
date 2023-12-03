@@ -19,7 +19,7 @@ spec:
       labels:      
         app: webapp101
       annotations:
-        kubernetes.io/change-cause: "This is the version 1 of the application"
+        kubernetes.io/change-cause: "This is the version 2 of the application"
     spec:
       containers:
       - name: webapp101
