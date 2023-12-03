@@ -4,7 +4,7 @@ metadata:
   name: webapp101
   namespace: dev
 spec:
-  replicas: 3
+  replicas: 15
   selector:
     matchLabels:
       app: webapp101
@@ -16,10 +16,6 @@ spec:
       containers:
       - name: webapp101
         image: jassyboy/roadmapdevops:V1
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 80
 
