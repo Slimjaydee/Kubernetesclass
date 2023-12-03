@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: webapp101
-        image: jassyboy/roadmapdevops:V1
+        image: jassyboy/roadmapdevops:V2
         ports:
         - containerPort: 80
 
