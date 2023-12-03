@@ -5,13 +5,21 @@ metadata:
   namespace: dev
 spec:
   replicas: 15
+  revisionHistoryLimit: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: webapp101
   template:
     metadata:
-      labels:
+      labels:      
         app: webapp101
+      annotations:
+        kubernetes.io/change-cause: "This is the version 1 of the application"
     spec:
       containers:
       - name: webapp101
