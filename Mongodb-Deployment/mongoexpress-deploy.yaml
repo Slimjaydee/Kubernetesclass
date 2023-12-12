@@ -45,6 +45,9 @@ spec:
               name: mongodb-secret
               key: my-mongodb-password
 
+        - name: ME_CONFIG_MONGODB_SERVER
+          value
+
 
 
 
