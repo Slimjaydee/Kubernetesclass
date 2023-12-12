@@ -24,7 +24,7 @@ spec:
           - "touch /foo/bar.txt && sleep 3600"
         volumeMounts:
           - name:  classless
-          mountPath: /foo
+            mountPath: /foo
         resources:
           limits:
             memory: "128Mi"
