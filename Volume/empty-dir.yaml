@@ -20,7 +20,7 @@ spec:
         command:
           - "/bin/sh"
         args:
-          - "-C"
+          - "-c"
           - "touch /foo/bar.txt && sleep 3600"
         volumeMounts:
           - name:  classless
