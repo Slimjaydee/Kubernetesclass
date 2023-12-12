@@ -12,7 +12,7 @@ spec:
         app: myapp
     spec:
       volumes:
-        -name: classless
+        - name: classless
           emptyDir: {}
       containers:
       - name: cont1
