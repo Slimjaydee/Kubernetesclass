@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deploy
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      volumes:
+        -name: classless
+          emptyDir: {}
+      containers:
+      - name: cont1
+        image: busybox
+        command:
+          - "/bin/sh"
+        args:
+          - "-C"
+          - "touch /foo/bar.txt && sleep 3600"
+        volumeMounts:
+          - name:  classless
+          mountPath: /foo
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+      
+      - name: cont2
+        image: busybox
+        command:
+          - "sleep"
+          - "3600"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        volumeMounts:
+          - name:  classless
+          mountPath:  /taa
+
+
