@@ -46,7 +46,24 @@ spec:
               key: my-mongodb-password
 
         - name: ME_CONFIG_MONGODB_SERVER
-          value
+          valueFrom:
+            configMapKeyRef:
+              name: mongodbexpress-config
+              key: database_url
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongoexpress-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: mongodb-express
+  ports:
+  - port: 8081
+    targetPort: 8081
+    nodePort: 30344
+
 
 
 
