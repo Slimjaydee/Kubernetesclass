@@ -29,3 +29,17 @@ spec:
               name: mongodb-secret
               key: my-mongodb-password
 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: mongodb
+  ports:
+  - port: 27017
+    targetPort: 27017
+
+
