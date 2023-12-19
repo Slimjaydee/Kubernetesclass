@@ -63,7 +63,7 @@ spec:
   ports:
   - port: 8081
     targetPort: 8081
-    nodePort: 30344
+    nodePort: 30011
 
 
 
